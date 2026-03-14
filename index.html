@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PlaysOut | Mini-Game Infrastructure for Super-Apps | $PLAY Token</title>
+<meta name="description" content="PlaysOut — high-performance publishing infrastructure for embedded mini-games across super-apps. Backed by OKX Ventures, Tencent Cloud, Coinbase & Binance. $7M raised. Claim $PLAY airdrop, connect wallet, stake and earn. CMC #702.">
+<meta name="keywords" content="PlaysOut, PlaysOut crypto, PLAY token, PlaysOut PLAY token, PlaysOut claim, PlaysOut airdrop, PlaysOut staking, PlaysOut connect wallet, PlaysOut mini game, Web3 gaming, GameFi, play to earn, Telegram mini games, WeChat games, PlaysOut OKX, PlaysOut Coinbase, PlaysOut Binance, mini game layer, superapp gaming, PlaysOut SDK, PlaysOut developer, PlaysOut Tencent, B3 gaming, TON Play, Aptos gaming, PlaysOut MEXC, PlaysOut whitelist">
+<meta name="author" content="PlaysOut">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<link rel="canonical" href="https://playsout.com/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://playsout.com/">
+<meta property="og:title" content="PlaysOut — Mini-Game Infrastructure for Super-Apps | $PLAY Token">
+<meta property="og:description" content="PlaysOut transforms any super-app into a gaming engine. Backed by OKX Ventures & Tencent. $7M raised. Claim $PLAY, connect wallet, stake & earn. CMC #702.">
+<meta property="og:image" content="https://playsout.com/og.png">
+<meta property="og:site_name" content="PlaysOut">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@itplaysout">
+<meta name="twitter:title" content="PlaysOut — The Future of Super-App Gaming">
+<meta name="twitter:description" content="High-performance mini-game infrastructure for super-apps. Backed by OKX Ventures & Tencent. Claim $PLAY airdrop now.">
+<meta name="twitter:image" content="https://playsout.com/og.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"PlaysOut","url":"https://playsout.com","description":"PlaysOut is the high-performance publishing infrastructure powering the future of embedded mini-games across super-apps.","sameAs":["https://twitter.com/itplaysout","https://t.me/playsout","https://coinmarketcap.com/currencies/playsout/"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"PlaysOut","headline":"PlaysOut — Mini-Game Infrastructure for Super-Apps","description":"High-performance publishing infrastructure for embedded mini-games. $7M raised. Backed by OKX Ventures & Tencent.","keywords":"PlaysOut, PLAY token, Web3 gaming, mini-game infrastructure, superapp gaming"}</script>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='a' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%23a855f7'/%3E%3Cstop offset='55%25' stop-color='%23ec4899'/%3E%3Cstop offset='100%25' stop-color='%23f97316'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='%230c0814'/%3E%3Crect x='6' y='6' width='52' height='52' rx='12' fill='url(%23a)' opacity='0.12'/%3E%3Cpolygon points='19,13 19,51 53,32' fill='url(%23a)'/%3E%3Ccircle cx='13' cy='13' r='5' fill='%23ffffff' opacity='0.55'/%3E%3Ccircle cx='13' cy='51' r='5' fill='%23ffffff' opacity='0.55'/%3E%3C/svg%3E">
+<style>
+:root{--p:#a855f7;--p2:#ec4899;--p3:#f97316;--p4:#06b6d4;--green:#10b981;--bg:#07040f;--bg2:#0d0919;--bg3:#130d22;--card:rgba(168,85,247,0.045);--border:rgba(168,85,247,0.16);--text:#e8e0f0;--muted:#7a6b99}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Inter','SF Pro Display',-apple-system,sans-serif;overflow-x:hidden;line-height:1.6}
+::selection{background:var(--p);color:#fff}
+::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--p);border-radius:4px}
+body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(168,85,247,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(168,85,247,.04) 1px,transparent 1px);background-size:52px 52px;pointer-events:none;z-index:0}
+.orb{position:fixed;border-radius:50%;filter:blur(140px);pointer-events:none;z-index:0;animation:ofl 11s ease-in-out infinite}
+.o1{width:700px;height:700px;background:radial-gradient(circle,rgba(168,85,247,.15),transparent);top:-250px;left:-150px}
+.o2{width:550px;height:550px;background:radial-gradient(circle,rgba(236,72,153,.11),transparent);bottom:-100px;right:-120px;animation-delay:-5s}
+.o3{width:380px;height:380px;background:radial-gradient(circle,rgba(249,115,22,.08),transparent);top:45%;left:55%;animation-delay:-3s}
+@keyframes ofl{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-38px) scale(1.04)}}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;height:72px;padding:0 40px;display:flex;align-items:center;justify-content:space-between;background:rgba(7,4,15,.88);backdrop-filter:blur(24px);border-bottom:1px solid var(--border)}
+.nl{display:flex;align-items:center;gap:10px;text-decoration:none}
+.ni{width:38px;height:38px;background:linear-gradient(135deg,var(--p),var(--p2));border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.nt{font-size:20px;font-weight:800;color:#fff;letter-spacing:-.5px}
+.nt span{background:linear-gradient(135deg,var(--p),var(--p2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.nav-links{display:flex;align-items:center;gap:30px;list-style:none}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--p)}
+.nav-act{display:flex;gap:11px;align-items:center}
+.btn{padding:10px 22px;border-radius:12px;font-size:14px;font-weight:700;cursor:pointer;transition:all .25s;border:none;display:inline-flex;align-items:center;gap:7px;text-decoration:none;position:relative;overflow:hidden;letter-spacing:.2px;white-space:nowrap}
+.btn::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.1),transparent);opacity:0;transition:opacity .25s}
+.btn:hover::after{opacity:1}
+.bp{background:linear-gradient(135deg,var(--p),var(--p2));color:#fff;box-shadow:0 4px 20px rgba(168,85,247,.3)}
+.bp:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(168,85,247,.5)}
+.bo{background:transparent;border:1px solid var(--border);color:var(--text)}
+.bo:hover{border-color:var(--p);color:var(--p)}
+.bplay{background:linear-gradient(135deg,#06b6d4,#3b82f6);color:#fff;box-shadow:0 4px 20px rgba(6,182,212,.3)}
+.bplay:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(6,182,212,.5)}
+.bclaim{background:linear-gradient(135deg,var(--p3),var(--p2));color:#fff;box-shadow:0 4px 20px rgba(249,115,22,.3)}
+.bclaim:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(249,115,22,.5)}
+.bstake{background:linear-gradient(135deg,var(--green),#06b6d4);color:#fff;box-shadow:0 4px 20px rgba(16,185,129,.3)}
+.bstake:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(16,185,129,.5)}
+.bghost{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:var(--text)}
+.bghost:hover{background:rgba(168,85,247,.08);border-color:var(--p);color:var(--p)}
+.blg{padding:16px 36px;font-size:16px;border-radius:16px}
+.bxl{padding:20px 52px;font-size:18px;border-radius:18px}
+.hero{position:relative;z-index:1;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:110px 24px 80px}
+.hbadge{display:inline-flex;align-items:center;gap:9px;padding:6px 18px;border-radius:100px;background:rgba(168,85,247,.1);border:1px solid rgba(168,85,247,.25);font-size:13px;font-weight:600;color:var(--p);margin-bottom:30px}
+.bdot{width:8px;height:8px;background:var(--green);border-radius:50%;animation:pg 2s infinite;box-shadow:0 0 8px var(--green)}
+@keyframes pg{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.45;transform:scale(.75)}}
+h1{font-size:clamp(44px,8vw,96px);font-weight:900;color:#fff;line-height:1.02;letter-spacing:-4px;margin-bottom:22px;max-width:1100px}
+.grad{background:linear-gradient(135deg,var(--p) 0%,var(--p2) 50%,var(--p3) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:clamp(16px,2.5vw,21px);color:var(--muted);max-width:640px;margin:0 auto 52px;line-height:1.75}
+.hero-act{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-bottom:72px}
+.gchips{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-bottom:72px}
+.gchip{display:flex;align-items:center;gap:9px;background:rgba(168,85,247,.06);border:1px solid rgba(168,85,247,.14);border-radius:100px;padding:9px 20px;font-size:14px;color:var(--text);font-weight:600;cursor:pointer;transition:all .25s;animation:cf 4s ease-in-out infinite}
+.gchip:nth-child(2){animation-delay:-1s}.gchip:nth-child(3){animation-delay:-2.1s}.gchip:nth-child(4){animation-delay:-3s}.gchip:nth-child(5){animation-delay:-.6s}
+.gchip:hover{border-color:var(--p);color:var(--p);box-shadow:0 4px 18px rgba(168,85,247,.28);transform:translateY(-3px)}
+@keyframes cf{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.ce{font-size:18px}.cearn{font-size:11px;color:var(--green);font-weight:800}
+.hstats{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:20px;overflow:hidden;max-width:1050px;width:100%}
+.si{background:var(--bg2);padding:24px 18px;text-align:center;transition:background .2s}
+.si:hover{background:var(--bg3)}
+.sn{font-size:27px;font-weight:900;color:#fff;letter-spacing:-1px;margin-bottom:4px;line-height:1}
+.sn .hi{color:var(--p)}
+.sl{font-size:12px;color:var(--muted);font-weight:500}
+.ticker-wrap{position:relative;z-index:1;width:100%;overflow:hidden;background:rgba(168,85,247,.04);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:12px 0}
+.ticker{display:flex;gap:56px;animation:tick 26s linear infinite;white-space:nowrap;width:max-content}
+.ti{display:flex;align-items:center;gap:9px;font-size:13px;font-weight:600;color:var(--muted)}
+.up{color:var(--green)}.dn{color:#f43f5e}
+@keyframes tick{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+section{position:relative;z-index:1}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.stag{font-size:11px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:var(--p);margin-bottom:14px}
+.stitle{font-size:clamp(30px,5vw,56px);font-weight:900;color:#fff;letter-spacing:-2px;line-height:1.1;margin-bottom:14px}
+.ssub{font-size:17px;color:var(--muted);max-width:560px;line-height:1.75}
+.backers{padding:68px 0;border-top:1px solid var(--border)}
+.blabel{text-align:center;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:2.5px;color:var(--muted);margin-bottom:34px}
+.brow{display:flex;flex-wrap:wrap;justify-content:center;gap:13px}
+.bpill{background:var(--card);border:1px solid var(--border);border-radius:100px;padding:9px 22px;font-size:14px;font-weight:700;color:var(--muted);transition:all .2s;cursor:default}
+.bpill:hover{color:var(--p);border-color:rgba(168,85,247,.35)}
+.features{padding:110px 0}
+.fgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:26px;overflow:hidden;margin-top:64px}
+.fcard{background:var(--bg2);padding:42px 36px;transition:background .3s;position:relative;overflow:hidden}
+.fcard::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--p),transparent);opacity:0;transition:opacity .3s}
+.fcard:hover{background:var(--bg3)}.fcard:hover::before{opacity:1}
+.ficon{width:52px;height:52px;border-radius:14px;margin-bottom:22px;display:flex;align-items:center;justify-content:center;font-size:24px}
+.ig{background:rgba(168,85,247,.1);border:1px solid rgba(168,85,247,.2)}
+.ib{background:rgba(6,182,212,.1);border:1px solid rgba(6,182,212,.2)}
+.io{background:rgba(249,115,22,.1);border:1px solid rgba(249,115,22,.2)}
+.ie{background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.2)}
+.ip{background:rgba(236,72,153,.1);border:1px solid rgba(236,72,153,.2)}
+.iy{background:rgba(250,204,21,.1);border:1px solid rgba(250,204,21,.2)}
+.ftitle{font-size:18px;font-weight:700;color:#fff;margin-bottom:9px}
+.fdesc{font-size:14px;color:var(--muted);line-height:1.7}
+.how{padding:100px 0}
+.hgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:64px;position:relative}
+.hgrid::before{content:'';position:absolute;top:32px;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,var(--border),var(--p),var(--border),transparent)}
+.hcard{position:relative;z-index:1;background:var(--bg2);border:1px solid var(--border);border-radius:24px;padding:36px 28px;text-align:center;transition:all .3s}
+.hcard:hover{border-color:rgba(168,85,247,.4);transform:translateY(-5px);box-shadow:0 16px 40px rgba(168,85,247,.1)}
+.hnum{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--p),var(--p2));color:#fff;font-size:22px;font-weight:900;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;box-shadow:0 4px 16px rgba(168,85,247,.35)}
+.htitle{font-size:16px;font-weight:700;color:#fff;margin-bottom:8px}
+.hdesc{font-size:13px;color:var(--muted);line-height:1.65}
+.earn-sec{padding:100px 0;background:linear-gradient(180deg,transparent,rgba(168,85,247,.02),transparent)}
+.egrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:64px}
+.ecard{background:var(--card);border:1px solid var(--border);border-radius:26px;padding:44px 38px;transition:all .3s;position:relative;overflow:hidden}
+.ecard:hover{border-color:rgba(168,85,247,.35);box-shadow:0 20px 50px rgba(168,85,247,.07)}
+.etag{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--p);margin-bottom:12px}
+.etitle{font-size:26px;font-weight:800;color:#fff;letter-spacing:-.5px;margin-bottom:10px}
+.edesc{font-size:14px;color:var(--muted);line-height:1.65;margin-bottom:28px}
+.elist{display:flex;flex-direction:column;gap:9px;margin-bottom:32px}
+.ei{display:flex;align-items:center;gap:9px;font-size:14px;color:var(--text)}
+.ck{color:var(--green);font-size:15px}
+.token-sec{padding:100px 0}
+.tgrid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;margin-top:64px}
+.tcard{background:var(--bg2);border:1px solid var(--border);border-radius:28px;padding:48px;position:relative;overflow:hidden}
+.tcard::after{content:'$PLAY';position:absolute;right:-15px;bottom:-15px;font-size:120px;font-weight:900;color:rgba(168,85,247,.04);letter-spacing:-4px;pointer-events:none}
+.tprice{font-size:50px;font-weight:900;color:#fff;letter-spacing:-2px;margin-bottom:4px}
+.tchange{font-size:15px;color:var(--green);font-weight:700;margin-bottom:30px}
+.trow{display:flex;justify-content:space-between;align-items:center;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.05)}
+.trow:last-of-type{border-bottom:none}
+.trl{font-size:14px;color:var(--muted)}.trv{font-size:14px;color:#fff;font-weight:600}
+.tbtns{margin-top:30px;display:flex;gap:12px;flex-wrap:wrap}
+.tinfo{display:flex;flex-direction:column;gap:26px}
+.tii{display:flex;gap:18px;align-items:flex-start}
+.tiiicon{width:44px;height:44px;border-radius:12px;background:rgba(168,85,247,.09);border:1px solid rgba(168,85,247,.18);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.tiit{font-size:16px;font-weight:700;color:#fff;margin-bottom:4px}
+.tiid{font-size:14px;color:var(--muted);line-height:1.65}
+.roadmap{padding:100px 0}
+.rgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:64px}
+.rcard{background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:28px 24px;transition:all .3s;position:relative}
+.rcard.active{border-color:rgba(168,85,247,.45);background:rgba(168,85,247,.06)}
+.rcard:hover{border-color:rgba(168,85,247,.3);transform:translateY(-3px)}
+.rq{font-size:22px;font-weight:800;color:#fff;margin-bottom:3px}
+.ry{font-size:13px;color:var(--muted);margin-bottom:18px}
+.rlive{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;letter-spacing:1.5px;color:var(--green);background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.25);padding:3px 10px;border-radius:100px;margin-bottom:14px}
+.rldot{width:6px;height:6px;background:var(--green);border-radius:50%;display:inline-block}
+.rl{list-style:none;display:flex;flex-direction:column;gap:8px}
+.rl li{font-size:13px;color:var(--muted);display:flex;gap:8px}
+.rl li::before{content:'▸';color:var(--p);flex-shrink:0}
+.cta-sec{padding:120px 24px;text-align:center;position:relative;z-index:1}
+.ctabox{background:linear-gradient(135deg,rgba(168,85,247,.08),rgba(236,72,153,.04),rgba(249,115,22,.06));border:1px solid var(--border);border-radius:32px;padding:80px 48px;max-width:960px;margin:0 auto;position:relative;overflow:hidden}
+.ctabox::before{content:'';position:absolute;inset:-1px;border-radius:33px;background:linear-gradient(135deg,rgba(168,85,247,.3),transparent 40%,rgba(236,72,153,.2));z-index:-1;opacity:.6}
+.ctabox h2{font-size:clamp(36px,5.5vw,60px);font-weight:900;color:#fff;letter-spacing:-2.5px;margin-bottom:16px}
+.ctabox p{font-size:19px;color:var(--muted);margin-bottom:44px}
+.ctabtns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+footer{border-top:1px solid var(--border);padding:64px 24px 40px;position:relative;z-index:1}
+.fgr{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:60px;max-width:1200px;margin:0 auto 56px}
+.fbrand p{font-size:14px;color:var(--muted);line-height:1.7;margin-top:16px;max-width:280px}
+.fct{font-size:12px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:18px}
+.flinks{list-style:none;display:flex;flex-direction:column;gap:11px}
+.flinks a{font-size:14px;color:var(--muted);text-decoration:none;transition:color .2s}
+.flinks a:hover{color:var(--p)}
+.fbot{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border);padding-top:30px;font-size:13px;color:var(--muted);flex-wrap:wrap;gap:16px}
+.slinks{display:flex;gap:11px}
+.sl2{width:36px;height:36px;border-radius:10px;background:var(--card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:16px;text-decoration:none;transition:all .2s}
+.sl2:hover{border-color:var(--p);background:rgba(168,85,247,.06)}
+.modal{display:none;position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,.82);backdrop-filter:blur(10px);align-items:center;justify-content:center}
+.modal.open{display:flex}
+.mbox{background:var(--bg2);border:1px solid var(--border);border-radius:28px;padding:48px;max-width:430px;width:90%;position:relative;animation:min .3s ease}
+@keyframes min{from{opacity:0;transform:translateY(22px) scale(.96)}to{opacity:1;transform:none}}
+.cbox{border-color:rgba(168,85,247,.3);max-width:460px;text-align:center}
+.sbox{border-color:rgba(16,185,129,.25);max-width:460px}
+.wlbox{border-color:rgba(249,115,22,.25);max-width:460px;text-align:center}
+.mclose{position:absolute;top:18px;right:18px;background:rgba(255,255,255,.05);border:none;color:var(--muted);cursor:pointer;font-size:18px;width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.mclose:hover{background:rgba(255,255,255,.1);color:#fff}
+.mtitle{font-size:22px;font-weight:800;color:#fff;margin-bottom:5px}
+.msub{font-size:14px;color:var(--muted);margin-bottom:28px}
+.wopts{display:flex;flex-direction:column;gap:11px}
+.wopt{display:flex;align-items:center;gap:15px;padding:16px 20px;border:1px solid var(--border);border-radius:15px;cursor:pointer;transition:all .2s;background:transparent;color:var(--text);text-align:left;width:100%;font-size:15px;font-weight:600}
+.wopt:hover{border-color:rgba(168,85,247,.35);background:rgba(168,85,247,.05);color:#fff}
+.wico{font-size:26px;flex-shrink:0}
+.wn{font-weight:700;font-size:15px;color:#fff}.wt{font-size:12px;font-weight:400;color:var(--muted)}
+.cico{font-size:66px;margin-bottom:20px;display:block;animation:bonce 1.2s ease-in-out infinite alternate}
+@keyframes bonce{from{transform:translateY(0)}to{transform:translateY(-10px)}}
+.camount{font-size:56px;font-weight:900;color:#fff;letter-spacing:-2px;margin-bottom:4px}
+.ctok{font-size:22px;font-weight:800;color:var(--p);margin-bottom:12px}
+.cdesc{font-size:14px;color:var(--muted);line-height:1.65;margin-bottom:34px}
+.cbtns{display:flex;flex-direction:column;gap:12px}
+.cfooter{margin-top:22px;font-size:12px;color:var(--muted)}
+.stk-title{font-size:24px;font-weight:800;color:#fff;margin-bottom:6px}
+.stk-sub{font-size:14px;color:var(--muted);margin-bottom:28px}
+.stk-plans{display:flex;flex-direction:column;gap:12px;margin-bottom:28px}
+.stk-plan{padding:18px 22px;border:1px solid var(--border);border-radius:16px;cursor:pointer;transition:all .2s}
+.stk-plan:hover,.stk-plan.sel{border-color:rgba(168,85,247,.4);background:rgba(168,85,247,.07)}
+.stk-top{display:flex;justify-content:space-between;margin-bottom:4px}
+.stk-name{font-size:15px;font-weight:700;color:#fff}
+.stk-apy{font-size:14px;font-weight:800;color:var(--green)}
+.stk-info{font-size:13px;color:var(--muted)}
+.wlico{font-size:56px;margin-bottom:16px;display:block}
+.wltitle{font-size:24px;font-weight:800;color:#fff;margin-bottom:8px}
+.wlsub{font-size:14px;color:var(--muted);margin-bottom:28px}
+.wlinput{width:100%;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:12px;padding:14px 18px;font-size:15px;color:#fff;outline:none;margin-bottom:14px;transition:border-color .2s;font-family:inherit}
+.wlinput:focus{border-color:var(--p)}.wlinput::placeholder{color:var(--muted)}
+.fade-in{opacity:0;transform:translateY(28px);transition:opacity .6s ease,transform .6s ease}
+.fade-in.visible{opacity:1;transform:none}
+@media(max-width:1000px){nav{padding:0 20px}.nav-links{display:none}.hstats{grid-template-columns:repeat(3,1fr)}.fgrid{grid-template-columns:1fr 1fr}.egrid{grid-template-columns:1fr}.tgrid{grid-template-columns:1fr;gap:40px}.hgrid{grid-template-columns:1fr 1fr}.hgrid::before{display:none}.rgrid{grid-template-columns:1fr 1fr}.fgr{grid-template-columns:1fr 1fr;gap:36px}}
+@media(max-width:640px){h1{letter-spacing:-2.5px}.hstats{grid-template-columns:1fr 1fr}.hero-act{gap:10px}.hgrid{grid-template-columns:1fr}.rgrid{grid-template-columns:1fr}.fgr{grid-template-columns:1fr}.fbot{flex-direction:column;text-align:center}.mbox{padding:32px 22px}}
+</style>
+</head>
+<body>
+<div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div>
+
+<nav>
+  <a href="#" class="nl">
+    <div class="ni"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><polygon points="4,2 4,20 20,11" fill="white"/><circle cx="19" cy="4" r="3" fill="white" opacity=".5"/></svg></div>
+    <span class="nt">Plays<span>Out</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#features">Protocol</a></li>
+    <li><a href="#how">How It Works</a></li>
+    <li><a href="#earn">Earn</a></li>
+    <li><a href="#token">$PLAY</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="https://docs.playsout.com" target="_blank">Docs</a></li>
+  </ul>
+  <div class="nav-act">
+    <button class="btn bclaim" onclick="openClaim()">🎁 Claim</button>
+    <button class="btn bstake" onclick="openStake()">⚡ Stake</button>
+    <button class="btn bp" id="connectBtn" onclick="openWallet()">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="1" y="4" width="22" height="16" rx="2"/><path d="M1 10h22"/></svg>Connect
+    </button>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hbadge"><span class="bdot"></span>$7M Raised · Tencent Partner · CMC #702 · +71.60% This Week 🔥</div>
+  <h1>The <span class="grad">Mini-Game Layer</span><br>for Super-Apps</h1>
+  <p class="hero-sub">PlaysOut is the high-performance publishing infrastructure that transforms any super-app into a frictionless gaming engine. Backed by OKX Ventures, Tencent, Coinbase & Binance. Play. Earn. Own.</p>
+  <div class="hero-act">
+    <button class="btn bp bxl" onclick="openWallet()"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="1" y="4" width="22" height="16" rx="2"/><path d="M1 10h22"/></svg>Connect Wallet</button>
+    <button class="btn bclaim bxl" onclick="openClaim()">🎁 Claim $PLAY</button>
+    <button class="btn bplay blg" onclick="openPlay()">▶ Play Now</button>
+    <button class="btn bstake blg" onclick="openStake()">⚡ Stake & Earn</button>
+    <button class="btn bghost blg" onclick="openWhitelist()">📋 Whitelist</button>
+  </div>
+  <div class="gchips">
+    <div class="gchip"><span class="ce">🏎️</span>Speed Rush<span class="cearn">+12 PLAY</span></div>
+    <div class="gchip"><span class="ce">⚔️</span>Battle Arena<span class="cearn">+25 PLAY</span></div>
+    <div class="gchip"><span class="ce">🧩</span>Puzzle Blitz<span class="cearn">+8 PLAY</span></div>
+    <div class="gchip"><span class="ce">🎯</span>Sniper Pro<span class="cearn">+18 PLAY</span></div>
+    <div class="gchip"><span class="ce">🐉</span>Dragon Quest<span class="cearn">+40 PLAY</span></div>
+  </div>
+  <div class="hstats">
+    <div class="si"><div class="sn">$7<span class="hi">M</span></div><div class="sl">Seed Raised</div></div>
+    <div class="si"><div class="sn">$150<span class="hi">M</span></div><div class="sl">Target Valuation</div></div>
+    <div class="si"><div class="sn">5<span class="hi">B</span></div><div class="sl">Max PLAY Supply</div></div>
+    <div class="si"><div class="sn">18<span class="hi">+</span></div><div class="sl">Exchanges Listed</div></div>
+    <div class="si"><div class="sn">1<span class="hi">M+</span></div><div class="sl">Daily Interactions</div></div>
+  </div>
+</section>
+
+<div class="ticker-wrap">
+  <div class="ticker">
+    <span class="ti">PLAY/USDT <span class="up">$0.0210 ▲+1.10%</span></span>
+    <span class="ti">7D Change <span class="up">+71.60% 🔥</span></span>
+    <span class="ti">ATH <span class="up">$0.0868 Aug 7</span></span>
+    <span class="ti">Market Cap <span class="up">$18.3M</span></span>
+    <span class="ti">24h Volume <span class="up">$1.81M</span></span>
+    <span class="ti">CMC Rank <span class="up">#702</span></span>
+    <span class="ti">Circ. Supply <span class="up">868M PLAY</span></span>
+    <span class="ti">Exchanges <span class="up">OKX · MEXC · Kraken · PancakeSwap</span></span>
+    <span class="ti">Backers <span class="up">OKX Ventures · Tencent · Coinbase · Binance</span></span>
+    <span class="ti">Raise Target <span class="up">$150M Valuation</span></span>
+    <span class="ti">PLAY/USDT <span class="up">$0.0210 ▲+1.10%</span></span>
+    <span class="ti">7D Change <span class="up">+71.60% 🔥</span></span>
+    <span class="ti">ATH <span class="up">$0.0868 Aug 7</span></span>
+    <span class="ti">Market Cap <span class="up">$18.3M</span></span>
+    <span class="ti">24h Volume <span class="up">$1.81M</span></span>
+    <span class="ti">CMC Rank <span class="up">#702</span></span>
+    <span class="ti">Circ. Supply <span class="up">868M PLAY</span></span>
+    <span class="ti">Exchanges <span class="up">OKX · MEXC · Kraken · PancakeSwap</span></span>
+    <span class="ti">Backers <span class="up">OKX Ventures · Tencent · Coinbase · Binance</span></span>
+    <span class="ti">Raise Target <span class="up">$150M Valuation</span></span>
+  </div>
+</div>
+
+<section class="backers">
+  <div class="container">
+    <p class="blabel">Backed & Partnered by World-Class Teams</p>
+    <div class="brow">
+      <div class="bpill">OKX Ventures</div><div class="bpill">Tencent Cloud</div><div class="bpill">Coinbase</div><div class="bpill">Binance</div><div class="bpill">Aptos</div><div class="bpill">B3 Gaming</div><div class="bpill">TON Play</div><div class="bpill">Gate.io</div><div class="bpill">DogeOS</div><div class="bpill">Eros Now</div><div class="bpill">MEXC</div><div class="bpill">Kraken</div>
+    </div>
+  </div>
+</section>
+
+<section class="features" id="features">
+  <div class="container">
+    <div class="fade-in">
+      <div class="stag">Core Infrastructure</div>
+      <h2 class="stitle">One SDK.<br>Infinite Games.</h2>
+      <p class="ssub">PlaysOut turns any high-traffic super-app into a gaming hub — bridging Web2 engagement with Web3 ownership at global scale.</p>
+    </div>
+    <div class="fgrid fade-in">
+      <div class="fcard"><div class="ficon ig">🎮</div><div class="ftitle">Mini-Games 2.0 Infrastructure</div><div class="fdesc">High-performance publishing layer for instant-play mini-games. Multi-engine compatible — deploy Unity, Cocos or HTML5 titles with a single integration and zero latency overhead.</div></div>
+      <div class="fcard"><div class="ficon ib">🌐</div><div class="ftitle">WeChat & Super-App Native</div><div class="fdesc">Fully compatible with WeChat, Telegram, TON Play and emerging super-app ecosystems. PlaysOut transforms billion-user platforms into frictionless gaming hubs without custom dev work.</div></div>
+      <div class="fcard"><div class="ficon io">⛓️</div><div class="ftitle">Web3 Bridge Layer</div><div class="fdesc">Seamlessly connect Web2 games to on-chain economies. Native Web3 wallet login, payment rails, NFT support, and token-based incentives — zero friction, zero fragmentation.</div></div>
+      <div class="fcard"><div class="ficon ie">💰</div><div class="ftitle">$PLAY Token Economy</div><div class="fdesc">Every tap unlocks value. Earn $PLAY through gameplay, staking, and ecosystem participation. PLAY powers transactions, integrations, governance, and incentives across the entire network.</div></div>
+      <div class="fcard"><div class="ficon ip">🔧</div><div class="ftitle">Developer SDK & Tooling</div><div class="fdesc">Robust open SDK for developers to launch and scale thousands of mini-games globally. Monetization analytics, leaderboard APIs, NFT minting tools — complete game-to-earn stack.</div></div>
+      <div class="fcard"><div class="ficon iy">📊</div><div class="ftitle">Engagement & Revenue Engine</div><div class="fdesc">PlaysOut drives measurable KPIs for platform operators: DAU growth, session time, and new revenue streams. Open interoperable architecture scales with any ecosystem size.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="how" id="how">
+  <div class="container">
+    <div class="fade-in" style="text-align:center">
+      <div class="stag">How It Works</div>
+      <h2 class="stitle">From Wallet to Winner in 4 Steps</h2>
+    </div>
+    <div class="hgrid fade-in">
+      <div class="hcard"><div class="hnum">1</div><div class="htitle">Connect Wallet</div><div class="hdesc">Link MetaMask, WalletConnect, Coinbase or OKX Wallet in one click. Web3 login seamlessly built in.</div></div>
+      <div class="hcard"><div class="hnum">2</div><div class="htitle">Pick Your Game</div><div class="hdesc">Browse hundreds of embedded mini-games on Telegram, WeChat & super-apps worldwide. Play instantly — no downloads.</div></div>
+      <div class="hcard"><div class="hnum">3</div><div class="htitle">Earn $PLAY</div><div class="hdesc">Accumulate PLAY tokens through gameplay, tournaments, daily quests, and referral activity. Every session earns.</div></div>
+      <div class="hcard"><div class="hnum">4</div><div class="htitle">Claim & Stake</div><div class="hdesc">Claim your $PLAY airdrop allocation, stake for up to 42% APY, and unlock governance rights and premium games.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="earn-sec" id="earn">
+  <div class="container">
+    <div class="fade-in">
+      <div class="stag">Earn & Participate</div>
+      <h2 class="stitle">Three Ways to Win</h2>
+      <p class="ssub">Play, stake, or build — every interaction with PlaysOut generates $PLAY token rewards and on-chain value.</p>
+    </div>
+    <div class="egrid fade-in">
+      <div class="ecard">
+        <div class="etag">Airdrop</div>
+        <div class="etitle">Claim $PLAY Tokens</div>
+        <div class="edesc">Pre-launch participants have unclaimed $PLAY allocations waiting. Connect wallet and claim before the snapshot deadline.</div>
+        <div class="elist">
+          <div class="ei"><span class="ck">✓</span>Pre-launch allocation pool</div>
+          <div class="ei"><span class="ck">✓</span>Activity-based multipliers</div>
+          <div class="ei"><span class="ck">✓</span>Referral bonus rewards</div>
+          <div class="ei"><span class="ck">✓</span>Early adopter tier boosts</div>
+        </div>
+        <button class="btn bclaim blg" onclick="openClaim()" style="width:100%;justify-content:center">🎁 Claim $PLAY Now</button>
+      </div>
+      <div class="ecard">
+        <div class="etag">Staking</div>
+        <div class="etitle">Stake & Earn APY</div>
+        <div class="edesc">Lock $PLAY tokens in the staking protocol and earn compounding yield. Flexible and fixed lock periods from 7 to 90 days.</div>
+        <div class="elist">
+          <div class="ei"><span class="ck">✓</span>Up to 42% APY</div>
+          <div class="ei"><span class="ck">✓</span>7 / 30 / 90 day tiers</div>
+          <div class="ei"><span class="ck">✓</span>Governance voting power</div>
+          <div class="ei"><span class="ck">✓</span>Premium game unlocks</div>
+        </div>
+        <button class="btn bstake blg" onclick="openStake()" style="width:100%;justify-content:center">⚡ Stake Now</button>
+      </div>
+      <div class="ecard">
+        <div class="etag">Play to Earn</div>
+        <div class="etitle">Play & Own</div>
+        <div class="edesc">Earn $PLAY in real-time through gameplay tournaments, leaderboard rankings, and daily challenges across all super-apps.</div>
+        <div class="elist">
+          <div class="ei"><span class="ck">✓</span>Daily earn quests</div>
+          <div class="ei"><span class="ck">✓</span>NFT item rewards</div>
+          <div class="ei"><span class="ck">✓</span>Tournament prize pools</div>
+          <div class="ei"><span class="ck">✓</span>Referral chain bonuses</div>
+        </div>
+        <button class="btn bplay blg" onclick="openPlay()" style="width:100%;justify-content:center">▶ Play Now</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="token-sec" id="token">
+  <div class="container">
+    <div class="fade-in"><div class="stag">$PLAY Token</div><h2 class="stitle">PlaysOut Token</h2></div>
+    <div class="tgrid fade-in">
+      <div class="tcard">
+        <div class="tprice">$0.0210</div>
+        <div class="tchange">▲ +1.10% (24h) · +71.60% (7D) 🔥 · CMC #702</div>
+        <div class="trow"><span class="trl">Market Cap</span><span class="trv">$18,275,499</span></div>
+        <div class="trow"><span class="trl">24h Volume</span><span class="trv">$1,809,539</span></div>
+        <div class="trow"><span class="trl">All-Time High</span><span class="trv">$0.0868 — Aug 7, 2025</span></div>
+        <div class="trow"><span class="trl">Circulating Supply</span><span class="trv">868,791,667 PLAY</span></div>
+        <div class="trow"><span class="trl">Max Supply</span><span class="trv">5,000,000,000 PLAY</span></div>
+        <div class="trow"><span class="trl">Networks</span><span class="trv">BNB Chain · Base · BSC</span></div>
+        <div class="trow"><span class="trl">Top Exchanges</span><span class="trv">OrangeX · MEXC · Kraken</span></div>
+        <div class="tbtns">
+          <button class="btn bp" onclick="openWallet()">Buy PLAY</button>
+          <button class="btn bclaim" onclick="openClaim()">Claim</button>
+          <button class="btn bstake" onclick="openStake()">Stake</button>
+          <a href="https://coinmarketcap.com/currencies/playsout/" target="_blank" class="btn bghost">CMC ↗</a>
+        </div>
+      </div>
+      <div class="tinfo">
+        <div class="tii"><div class="tiiicon">🎮</div><div><div class="tiit">In-Game Currency</div><div class="tiid">$PLAY powers every transaction — game unlocks, tournament entries, NFT purchases, and developer fee settlements across the entire ecosystem.</div></div></div>
+        <div class="tii"><div class="tiiicon">⚖️</div><div><div class="tiit">Governance</div><div class="tiid">PLAY holders vote on protocol upgrades, new game integrations, treasury allocations, and ecosystem decisions. Your stake = your voice in the protocol.</div></div></div>
+        <div class="tii"><div class="tiiicon">💎</div><div><div class="tiit">Staking Yield</div><div class="tiid">Stake PLAY to earn compounding APY up to 42%. Choose from flexible 7-day to max-yield 90-day durations with proportional governance power.</div></div></div>
+        <div class="tii"><div class="tiiicon">🚀</div><div><div class="tiit">Developer Incentives</div><div class="tiid">Game developers earn $PLAY through usage royalties, SDK integrations, and launch bonuses — aligning the entire ecosystem around growth and quality.</div></div></div>
+        <div class="tii"><div class="tiiicon">🔗</div><div><div class="tiit">Multi-Chain Native</div><div class="tiid">PLAY operates across BNB Chain, Base and BSC with Aptos and TON integrations underway — seamless cross-ecosystem utility at every layer.</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="roadmap" id="roadmap">
+  <div class="container">
+    <div class="fade-in" style="text-align:center"><div class="stag">Roadmap</div><h2 class="stitle">The PlaysOut Journey</h2></div>
+    <div class="rgrid fade-in">
+      <div class="rcard"><div class="rq">Q1</div><div class="ry">2025</div><ul class="rl"><li>$7M seed round closed</li><li>OKX Ventures partnership</li><li>Tencent Cloud integration</li><li>SDK v1 developer release</li><li>B3 & Aptos partnerships</li></ul></div>
+      <div class="rcard active"><div class="rq">Q3</div><div class="ry">2025</div><div class="rlive"><span class="rldot"></span>LIVE NOW</div><ul class="rl"><li>PLAY token launch Jul 31</li><li>18+ exchange listings</li><li>Coinbase & Binance deals</li><li>1M+ daily interactions</li><li>$150M valuation raise</li></ul></div>
+      <div class="rcard"><div class="rq">Q4</div><div class="ry">2025</div><ul class="rl"><li>WeChat deep integration</li><li>Telegram mega-launch</li><li>200+ game library live</li><li>Staking protocol v2</li><li>DAO governance launch</li></ul></div>
+      <div class="rcard"><div class="rq">2026</div><div class="ry">& Beyond</div><ul class="rl"><li>Middle East SWF round</li><li>TON & Aptos mainnet</li><li>NFT marketplace live</li><li>1B total user milestone</li><li>Enterprise SDK licensing</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-sec">
+  <div class="ctabox fade-in">
+    <h2>Play. Earn. Own.<br><span class="grad">That's PlaysOut.</span></h2>
+    <p>Join the mini-game revolution. Connect your wallet, claim $PLAY tokens, and be part of the future of super-app gaming.</p>
+    <div class="ctabtns">
+      <button class="btn bp bxl" onclick="openWallet()">Connect Wallet</button>
+      <button class="btn bclaim bxl" onclick="openClaim()">🎁 Claim $PLAY</button>
+      <button class="btn bplay blg" onclick="openPlay()">▶ Play Now</button>
+      <button class="btn bghost blg" onclick="openWhitelist()">📋 Join Whitelist</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="fgr">
+    <div class="fbrand">
+      <a href="#" class="nl"><div class="ni"><svg width="20" height="20" viewBox="0 0 22 22" fill="none"><polygon points="4,2 4,20 20,11" fill="white"/></svg></div><span class="nt">Plays<span>Out</span></span></a>
+      <p>High-performance publishing infrastructure for embedded mini-games across super-apps. Backed by OKX Ventures, Tencent & Coinbase.</p>
+    </div>
+    <div><div class="fct">Protocol</div><ul class="flinks"><li><a href="#features">Infrastructure</a></li><li><a href="#how">How It Works</a></li><li><a href="#earn">Earn $PLAY</a></li><li><a href="#token">Token Info</a></li><li><a href="#roadmap">Roadmap</a></li></ul></div>
+    <div><div class="fct">Resources</div><ul class="flinks"><li><a href="https://docs.playsout.com" target="_blank">Documentation</a></li><li><a href="https://coinmarketcap.com/currencies/playsout/" target="_blank">CoinMarketCap</a></li><li><a href="https://www.coingecko.com/en/coins/playsout" target="_blank">CoinGecko</a></li><li><a href="https://playsout.com/whitepaper" target="_blank">Whitepaper</a></li><li><a href="https://playsout.com/audit" target="_blank">Audit Report</a></li></ul></div>
+    <div><div class="fct">Community</div><ul class="flinks"><li><a href="https://twitter.com/itplaysout" target="_blank">X / Twitter</a></li><li><a href="https://t.me/playsout" target="_blank">Telegram</a></li><li><a href="https://discord.gg/playsout" target="_blank">Discord</a></li><li><a href="https://medium.com/@playsout" target="_blank">Medium</a></li><li><a href="https://linkedin.com/company/playsout" target="_blank">LinkedIn</a></li></ul></div>
+  </div>
+  <div class="fbot">
+    <span>© 2025 PlaysOut. All rights reserved. · The Future of Super-App Gaming.</span>
+    <div class="slinks">
+      <a href="https://twitter.com/itplaysout" target="_blank" class="sl2">𝕏</a>
+      <a href="https://t.me/playsout" target="_blank" class="sl2">✈️</a>
+      <a href="https://discord.gg/playsout" target="_blank" class="sl2">💬</a>
+      <a href="https://coinmarketcap.com/currencies/playsout/" target="_blank" class="sl2">📊</a>
+    </div>
+  </div>
+</footer>
+
+<div class="modal" id="wm">
+  <div class="mbox">
+    <button class="mclose" onclick="closeM('wm')">✕</button>
+    <div class="mtitle">Connect Wallet</div>
+    <div class="msub">Choose your wallet to access PlaysOut Protocol</div>
+    <div class="wopts">
+      <button class="wopt" onclick="doConnect('MetaMask')"><span class="wico">🦊</span><div><div class="wn">MetaMask</div><div class="wt">Browser Extension · EVM</div></div></button>
+      <button class="wopt" onclick="doConnect('WalletConnect')"><span class="wico">🔗</span><div><div class="wn">WalletConnect</div><div class="wt">Mobile & Desktop · Multichain</div></div></button>
+      <button class="wopt" onclick="doConnect('Coinbase Wallet')"><span class="wico">🔵</span><div><div class="wn">Coinbase Wallet</div><div class="wt">Self-custody · EVM</div></div></button>
+      <button class="wopt" onclick="doConnect('OKX Wallet')"><span class="wico">⭕</span><div><div class="wn">OKX Wallet</div><div class="wt">Web3 · Multi-chain</div></div></button>
+      <button class="wopt" onclick="doConnect('Phantom')"><span class="wico">👻</span><div><div class="wn">Phantom</div><div class="wt">Multi-chain · EVM + SOL</div></div></button>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="cm">
+  <div class="mbox cbox">
+    <button class="mclose" onclick="closeM('cm')">✕</button>
+    <span class="cico">🎁</span>
+    <div class="camount">4,200</div>
+    <div class="ctok">$PLAY Tokens Available</div>
+    <div class="cdesc">You have unclaimed $PLAY tokens from pre-launch participation. Connect your wallet to claim before the snapshot deadline. Powered by BNB Chain.</div>
+    <div class="cbtns">
+      <button class="btn bclaim blg" style="width:100%;justify-content:center" onclick="closeM('cm');openWallet()">Connect Wallet to Claim</button>
+      <button class="btn bghost" style="width:100%;justify-content:center" onclick="closeM('cm')">Maybe Later</button>
+    </div>
+    <div class="cfooter">Claim deadline: April 15, 2026 · Non-custodial · Audited</div>
+  </div>
+</div>
+
+<div class="modal" id="sm">
+  <div class="mbox sbox">
+    <button class="mclose" onclick="closeM('sm')">✕</button>
+    <div class="stk-title">Stake $PLAY · Earn APY</div>
+    <div class="stk-sub">Choose your staking plan. Rewards compound daily on-chain.</div>
+    <div class="stk-plans">
+      <div class="stk-plan sel" onclick="selPlan(this)"><div class="stk-top"><span class="stk-name">Flexible — 7 Days</span><span class="stk-apy">12% APY</span></div><div class="stk-info">Unlock anytime after 7 days · No lock penalty</div></div>
+      <div class="stk-plan" onclick="selPlan(this)"><div class="stk-top"><span class="stk-name">Standard — 30 Days</span><span class="stk-apy">24% APY</span></div><div class="stk-info">Lock for 30 days · 2× governance power</div></div>
+      <div class="stk-plan" onclick="selPlan(this)"><div class="stk-top"><span class="stk-name">Premium — 90 Days</span><span class="stk-apy">42% APY</span></div><div class="stk-info">Max yield · 5× governance · Premium game access</div></div>
+    </div>
+    <button class="btn bstake blg" style="width:100%;justify-content:center" onclick="closeM('sm');openWallet()">Connect Wallet to Stake</button>
+  </div>
+</div>
+
+<div class="modal" id="wl">
+  <div class="mbox wlbox">
+    <button class="mclose" onclick="closeM('wl')">✕</button>
+    <span class="wlico">📋</span>
+    <div class="wltitle">Join the Whitelist</div>
+    <div class="wlsub">Get early access to new game drops, token sales, and exclusive PlaysOut features before public launch.</div>
+    <input class="wlinput" id="wlEmail" type="email" placeholder="Enter your email address">
+    <input class="wlinput" type="text" placeholder="Wallet address (optional)">
+    <button class="btn bclaim blg" style="width:100%;justify-content:center;margin-bottom:10px" onclick="submitWL()">🚀 Join Whitelist</button>
+    <button class="btn bghost" style="width:100%;justify-content:center" onclick="closeM('wl')">Cancel</button>
+  </div>
+</div>
+
+<script>
+function openWallet(){document.getElementById('wm').classList.add('open')}
+function openClaim(){document.getElementById('cm').classList.add('open')}
+function openStake(){document.getElementById('sm').classList.add('open')}
+function openWhitelist(){document.getElementById('wl').classList.add('open')}
+function openPlay(){window.open('https://t.me/playsout','_blank')}
+function closeM(id){document.getElementById(id).classList.remove('open')}
+function doConnect(name){
+  closeM('wm');
+  var b=document.getElementById('connectBtn');
+  b.innerHTML='✓ '+name;
+  b.style.background='linear-gradient(135deg,#10b981,#06b6d4)';
+  b.style.cursor='default';
+  b.onclick=null;
+}
+function selPlan(el){document.querySelectorAll('.stk-plan').forEach(function(p){p.classList.remove('sel')});el.classList.add('sel')}
+function submitWL(){
+  var e=document.getElementById('wlEmail');
+  if(e.value.includes('@')){closeM('wl');alert('🎉 You\'re on the PlaysOut whitelist! Check your email for confirmation.');}
+  else{e.style.borderColor='#f43f5e';e.focus();}
+}
+['wm','cm','sm','wl'].forEach(function(id){
+  document.getElementById(id).addEventListener('click',function(e){if(e.target===this)this.classList.remove('open')});
+});
+var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1});
+document.querySelectorAll('.fade-in').forEach(function(el){obs.observe(el)});
+</script>
+</body>
+</html>
